@@ -104,6 +104,14 @@ dvi.addEventListener("click", function () {
     }
 });
 
+per.addEventListener("click", function () {
+    const lastChar = inp.value[inp.value.length - 1];
+    if (lastChar === "+" || lastChar === "-" || lastChar === "*" || lastChar === "/" || lastChar === "%") {
+    } else {
+        inp.value += "%";
+    }
+});
+
 equal.addEventListener("click", function () {
     inp.value = eval(inp.value)
 });
