@@ -108,16 +108,8 @@ equal.addEventListener("click", function () {
     inp.value = eval(inp.value)
 });
 
-// btns.addEventListener("click", function () {
-//    if (ar!=inp.value) {
-//         inp.value="";
-//    }
-// });
-
-
-
-
-
-
-
-
+btns.addEventListener("click", function () {
+   if (ar!=inp.value) {
+        inp.value="";
+   }
+});
