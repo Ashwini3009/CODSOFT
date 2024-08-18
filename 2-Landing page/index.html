@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,15 +47,32 @@
             background: #f39c12;
         }
 
-        .social-icons .fa-facebook-f { background: #3b5998; }
-        .social-icons .fa-twitter { background: #1da1f2; }
-        .social-icons .fa-instagram { background: #e1306c; }
-        .social-icons .fa-youtube { background: #ff0000; }
-        .social-icons .fa-linkedin-in { background: #0077b5; }
-        .social-icons .fa-globe { background: #333; }
+        .social-icons .fa-facebook-f {
+            background: #3b5998;
+        }
+
+        .social-icons .fa-twitter {
+            background: #1da1f2;
+        }
+
+        .social-icons .fa-instagram {
+            background: #e1306c;
+        }
+
+        .social-icons .fa-youtube {
+            background: #ff0000;
+        }
+
+        .social-icons .fa-linkedin-in {
+            background: #0077b5;
+        }
+
+        .social-icons .fa-globe {
+            background: #333;
+        }
 
         .top-banner {
-            background: linear-gradient(90deg, #ff6f61, #d8345f); 
+            background: linear-gradient(90deg, #ff6f61, #d8345f);
             color: #fff;
             padding: 1rem 2rem;
             display: flex;
@@ -72,7 +90,7 @@
             display: block;
             margin: 0 500px;
         }
-        
+
         .top-banner .btn {
             background: #fff;
             color: #ff6f61;
@@ -90,12 +108,12 @@
         }
 
         header {
-            background: linear-gradient(90deg, #ff7e5f, #feb47b); 
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
             color: #fff;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
-            top: 60px; 
+            top: 60px;
             left: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -207,137 +225,166 @@
         }
 
         .section .container {
-            max-width: 800px; 
+            max-width: 800px;
             width: 100%;
             margin: 0 auto;
         }
 
-       
-.home-section {
-    background: url('https://img.freepik.com/premium-photo/colorful-row-jackets-lined-up-perfect-harmony_431161-73130.jpg') no-repeat center center/cover;
-    color: #fff;
-    padding: 6rem 2rem;
-    text-align: center;
-    position: relative;
-    background-attachment: fixed; 
-}
 
-.home-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)); 
-    z-index: 1;
-    opacity: 0.8;
-}
+        .home-section {
+            background: url('https://img.freepik.com/premium-photo/colorful-row-jackets-lined-up-perfect-harmony_431161-73130.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            background-attachment: fixed;
+        }
 
-.home-section .container {
-    position: relative;
-    z-index: 2;
-}
+        .home-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+            z-index: 1;
+            opacity: 0.8;
+        }
 
-.home-section .content {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1); 
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px); 
-    animation: fadeIn 1.5s ease-in-out;
-}
+        .home-section .container {
+            position: relative;
+            z-index: 2;
+        }
 
-.home-section h1 {
-    font-size: 3.8rem;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    background: linear-gradient(45deg, #ff7e5f, #feb47b, #ff6b6b, #ffd700);
-    background-size: 400%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientMove 5s ease infinite, slideInLeft 1.5s ease-in-out;
-    font-family: 'Oswald', sans-serif;
-}
+        .home-section .content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
 
-.home-section p {
-    font-size: 1.5rem;
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-    color: #f9f9f9;
-    animation: slideInRight 2s ease-in-out;
-    font-family: 'Merriweather', serif;
-    letter-spacing: 1.2px;
-}
+        .home-section h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b, #ff6b6b, #ffd700);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 5s ease infinite, slideInLeft 1.5s ease-in-out;
+            font-family: 'Oswald', sans-serif;
+        }
 
-.description-paragraph {
-    font-size: 1.3rem;
-    line-height: 1.9;
-    color: #444;
-    margin: 2.5rem auto;
-    max-width: 850px;
-    text-align: center;
-    font-family: 'Georgia', serif;
-    padding: 1.5rem;
-    background: #fff;
-    border-left: 8px solid #ff7e5f;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 2.5s ease-in-out;
-}
+        .home-section p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            color: #f9f9f9;
+            animation: slideInRight 2s ease-in-out;
+            font-family: 'Merriweather', serif;
+            letter-spacing: 1.2px;
+        }
 
-.btn {
-    background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff6b6b, #ffd700);
-    background-size: 200%;
-    color: #fff;
-    padding: 1rem 3rem;
-    border: none;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-family: 'Lato', sans-serif;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
+        .description-paragraph {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: #444;
+            margin: 2.5rem auto;
+            max-width: 850px;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            padding: 1.5rem;
+            background: #fff;
+            border-left: 8px solid #ff7e5f;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2.5s ease-in-out;
+        }
 
-.btn:hover {
-    background-position: center;
-    transform: translateY(-7px) scale(1.1);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
+        .btn {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff6b6b, #ffd700);
+            background-size: 200%;
+            color: #fff;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-family: 'Lato', sans-serif;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            background-position: center;
+            transform: translateY(-7px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
 
 
 
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
 
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
+            50% {
+                background-position: 100% 50%;
+            }
 
-@keyframes slideInLeft {
-    0% { opacity: 0; transform: translateX(-100px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-@keyframes slideInRight {
-    0% { opacity: 0; transform: translateX(100px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
 
 
         .about-section {
-            background: linear-gradient(90deg, #f9d423, #ff4e50); 
+            background: linear-gradient(90deg, #f9d423, #ff4e50);
             color: #333;
-            padding: 4rem 2rem; 
+            padding: 4rem 2rem;
         }
 
         .about-cards {
@@ -345,7 +392,7 @@
             justify-content: space-between;
             gap: 20px;
             flex-wrap: wrap;
-            margin: 0; 
+            margin: 0;
         }
 
         .about-card {
@@ -357,63 +404,63 @@
             flex: 1;
             max-width: 300px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 0; 
+            margin: 0;
         }
 
         .about-card img {
             width: 100%;
             height: auto;
             border-radius: 10px;
-            margin-bottom: 15px; 
+            margin-bottom: 15px;
         }
 
-.services-section {
-    background: linear-gradient(135deg, #f9d423, #ff4e50);
-    color: #fff;
-    padding: 4rem 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(233, 4, 195, 0.3);
-}
+        .services-section {
+            background: linear-gradient(135deg, #f9d423, #ff4e50);
+            color: #fff;
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(233, 4, 195, 0.3);
+        }
 
-.services-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    background: -webkit-linear-gradient(45deg, #0e0d0d, #030303);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
-}
+        .services-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            background: -webkit-linear-gradient(45deg, #0e0d0d, #030303);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease-in-out;
+        }
 
-.services-section h2:hover {
-    letter-spacing: 4px;
-    transform: scale(1.1);
-}
+        .services-section h2:hover {
+            letter-spacing: 4px;
+            transform: scale(1.1);
+        }
 
-.services {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
 
-.service {
-    max-width: 300px;
-    text-align: left;
-    background: #444;
-    padding: 2rem;
-    border-radius: 10px;
-    transition: transform 0.3s ease, background 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
+        .service {
+            max-width: 300px;
+            text-align: left;
+            background: #444;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
 
-.service:hover {
-    transform: translateY(-10px);
-    background: #555;
-}
+        .service:hover {
+            transform: translateY(-10px);
+            background: #555;
+        }
 
         .testimonial {
             max-width: 300px;
@@ -492,17 +539,18 @@
         }
 
         .adjust-content {
-            margin-top: 120px; 
+            margin-top: 120px;
         }
 
         .description-paragraph {
-            font-family: 'Georgia', serif; 
-            font-size: 1.1rem; 
-            line-height: 1.8; 
-            margin-bottom: 2rem; 
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
         }
     </style>
 </head>
+
 <body>
     <div class="social-icons">
         <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
@@ -542,29 +590,39 @@
             </div>
         </div>
     </section>
-    
-    <p class="description-paragraph">At VibeThreads, we are dedicated to creating a sustainable future for fashion. Our modern clothing brand blends cutting-edge designs with eco-friendly practices. Each piece in our collection is crafted from sustainable materials, ensuring that you look stylish while making a positive impact on the environment. We believe in transparency and ethical production, striving to minimize our carbon footprint and promote fair labor practices. Join us in redefining fashion with a focus on sustainability and innovation.</p>
-    
+
+    <p class="description-paragraph">At VibeThreads, we are dedicated to creating a sustainable future for fashion. Our
+        modern clothing brand blends cutting-edge designs with eco-friendly practices. Each piece in our collection is
+        crafted from sustainable materials, ensuring that you look stylish while making a positive impact on the
+        environment. We believe in transparency and ethical production, striving to minimize our carbon footprint and
+        promote fair labor practices. Join us in redefining fashion with a focus on sustainability and innovation.</p>
+
     <a href="#services" class="btn explore-btn">Explore Our Collection</a>
-    
+
     <section id="about" class="about-section section adjust-content">
         <div class="container">
             <h2>About Us</h2>
             <div class="about-cards">
                 <div class="about-card">
-                    <img src="https://static.vecteezy.com/system/resources/previews/030/465/544/large_2x/clothes-hang-in-a-modern-boutique-reflecting-contemporary-fashion-at-the-clothing-shop-vertical-mobile-wallpaper-ai-generated-free-photo.jpg" alt="Our Mission">
+                    <img src="https://static.vecteezy.com/system/resources/previews/030/465/544/large_2x/clothes-hang-in-a-modern-boutique-reflecting-contemporary-fashion-at-the-clothing-shop-vertical-mobile-wallpaper-ai-generated-free-photo.jpg"
+                        alt="Our Mission">
                     <h3>Our Mission</h3>
-                    <p>Our mission is to deliver the latest fashion trends while maintaining high-quality standards and providing an exceptional shopping experience.</p>
+                    <p>Our mission is to deliver the latest fashion trends while maintaining high-quality standards and
+                        providing an exceptional shopping experience.</p>
                 </div>
                 <div class="about-card">
-                    <img src="https://img.freepik.com/premium-photo/fashionable-shop-presents-clothes-hangers-embodying-modern-boutique-aesthetics-vertical-mobile_896558-18030.jpg" alt="Our Vision">
+                    <img src="https://img.freepik.com/premium-photo/fashionable-shop-presents-clothes-hangers-embodying-modern-boutique-aesthetics-vertical-mobile_896558-18030.jpg"
+                        alt="Our Vision">
                     <h3>Our Vision</h3>
-                    <p>We envision becoming a leading fashion brand that sets trends and inspires Gen-Z with innovative and stylish clothing options.</p>
+                    <p>We envision becoming a leading fashion brand that sets trends and inspires Gen-Z with innovative
+                        and stylish clothing options.</p>
                 </div>
                 <div class="about-card">
-                    <img src="https://img.freepik.com/premium-photo/clothes-hang-modern-boutique-reflecting-contemporary-fashion-clothing-shop-vertical-mo_896558-17834.jpg" alt="Our Values">
+                    <img src="https://img.freepik.com/premium-photo/clothes-hang-modern-boutique-reflecting-contemporary-fashion-clothing-shop-vertical-mo_896558-17834.jpg"
+                        alt="Our Values">
                     <h3>Our Values</h3>
-                    <p>We value creativity, sustainability, and inclusivity. Our goal is to create a fashion brand that resonates with the values of the modern generation.</p>
+                    <p>We value creativity, sustainability, and inclusivity. Our goal is to create a fashion brand that
+                        resonates with the values of the modern generation.</p>
                 </div>
             </div>
         </div>
@@ -609,4 +667,5 @@
         });
     </script>
 </body>
+
 </html>

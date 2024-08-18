@@ -22,49 +22,49 @@ let dot = document.querySelector(".dot");
 let equal = document.querySelector(".equal");
 let ar = [];
 
-zer.addEventListener("click",function () {
-    inp.value=inp.value+0;
-    
+zer.addEventListener("click", function () {
+    inp.value = inp.value + 0;
+
 });
-zero.addEventListener("click",function () {
-    inp.value=inp.value+0+0;
-    
+zero.addEventListener("click", function () {
+    inp.value = inp.value + 0 + 0;
+
 });
-one.addEventListener("click",function () {
-    inp.value=inp.value+1;
-    
+one.addEventListener("click", function () {
+    inp.value = inp.value + 1;
+
 });
-two.addEventListener("click",function () {
-    inp.value=inp.value+2;
-    
+two.addEventListener("click", function () {
+    inp.value = inp.value + 2;
+
 });
-three.addEventListener("click",function () {
-    inp.value=inp.value+3;
-    
+three.addEventListener("click", function () {
+    inp.value = inp.value + 3;
+
 });
-four.addEventListener("click",function () {
-    inp.value=inp.value+4;
-    
+four.addEventListener("click", function () {
+    inp.value = inp.value + 4;
+
 });
-five.addEventListener("click",function () {
-    inp.value=inp.value+5;
-    
+five.addEventListener("click", function () {
+    inp.value = inp.value + 5;
+
 });
-six.addEventListener("click",function () {
-    inp.value=inp.value+6;
-    
+six.addEventListener("click", function () {
+    inp.value = inp.value + 6;
+
 });
-seven.addEventListener("click",function () {
-    inp.value=inp.value+7;
-    
+seven.addEventListener("click", function () {
+    inp.value = inp.value + 7;
+
 });
-eight.addEventListener("click",function () {
-    inp.value=inp.value+8;
-    
+eight.addEventListener("click", function () {
+    inp.value = inp.value + 8;
+
 });
-nine.addEventListener("click",function () {
-    inp.value=inp.value+9;
-    
+nine.addEventListener("click", function () {
+    inp.value = inp.value + 9;
+
 });
 
 clr.addEventListener("click", function () {
@@ -72,35 +72,35 @@ clr.addEventListener("click", function () {
 });
 
 dle.addEventListener("click", function () {
-    inp.value=(inp.value).slice(0,-1)
+    inp.value = (inp.value).slice(0, -1)
 });
 
 
 add.addEventListener("click", function () {
-if (inp.value[inp.value.length-1]=="+" ||inp.value[inp.value.length-1]=="-" ||inp.value[inp.value.length-1]=="*" ||inp.value[inp.value.length-1]=="/") {
-} else{
-    inp.value=inp.value + "+";
-}
+    if (inp.value[inp.value.length - 1] == "+" || inp.value[inp.value.length - 1] == "-" || inp.value[inp.value.length - 1] == "*" || inp.value[inp.value.length - 1] == "/") {
+    } else {
+        inp.value = inp.value + "+";
+    }
 });
 
 sub.addEventListener("click", function () {
-    if (inp.value[inp.value.length-1]=="+" ||inp.value[inp.value.length-1]=="-" ||inp.value[inp.value.length-1]=="*" ||inp.value[inp.value.length-1]=="/") {
-    } else{
-        inp.value=inp.value + "-";
+    if (inp.value[inp.value.length - 1] == "+" || inp.value[inp.value.length - 1] == "-" || inp.value[inp.value.length - 1] == "*" || inp.value[inp.value.length - 1] == "/") {
+    } else {
+        inp.value = inp.value + "-";
     }
 });
 
 multi.addEventListener("click", function () {
-        if (inp.value[inp.value.length-1]=="+" ||inp.value[inp.value.length-1]=="-" ||inp.value[inp.value.length-1]=="*" ||inp.value[inp.value.length-1]=="/") {
-        } else{
-            inp.value=inp.value + "*";
-        }
+    if (inp.value[inp.value.length - 1] == "+" || inp.value[inp.value.length - 1] == "-" || inp.value[inp.value.length - 1] == "*" || inp.value[inp.value.length - 1] == "/") {
+    } else {
+        inp.value = inp.value + "*";
+    }
 });
 
 dvi.addEventListener("click", function () {
-    if (inp.value[inp.value.length-1]=="+" ||inp.value[inp.value.length-1]=="-" ||inp.value[inp.value.length-1]=="*" ||inp.value[inp.value.length-1]=="/") {
-    } else{
-        inp.value=inp.value + "/";
+    if (inp.value[inp.value.length - 1] == "+" || inp.value[inp.value.length - 1] == "-" || inp.value[inp.value.length - 1] == "*" || inp.value[inp.value.length - 1] == "/") {
+    } else {
+        inp.value = inp.value + "/";
     }
 });
 
@@ -109,7 +109,7 @@ equal.addEventListener("click", function () {
 });
 
 btns.addEventListener("click", function () {
-   if (ar!=inp.value) {
-        inp.value="";
-   }
+    if (ar != inp.value) {
+        inp.value = "";
+    }
 });

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       rect.top >= 0 &&
       rect.left >= 0 &&
       rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
+      (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
@@ -43,12 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const itemTop = item.getBoundingClientRect().top;
       const itemHeight = item.getBoundingClientRect().height;
       const isVisible =
-        itemTop < windowHeight - 100 && itemTop + itemHeight > 0; 
+        itemTop < windowHeight - 100 && itemTop + itemHeight > 0;
 
       if (isVisible) {
         item.classList.add("float-up");
       } else {
-        item.classList.remove("float-up"); 
+        item.classList.remove("float-up");
       }
     });
   }
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const options = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.1, 
+    threshold: 0.1,
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
