@@ -1,0 +1,662 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Custom Color Palette */
+:root {
+  --brand-color: #00bfa6;
+  --linear-back: linear-gradient(
+    180deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(0, 191, 92, 1) 100%
+  );
+}
+
+/* Header and Navbar Styles */
+header {
+  background-color: var(--brand-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+nav {
+  max-width: 1200px; /* Ensure the navbar doesn't exceed the max width */
+  margin: 0 auto; /* Center the navbar */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 40px 60px; /* Adjusted padding */
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--linear-back);
+  color: white;
+  margin-top: 80px; /* Space for the fixed header */
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none; /* Ensure the gradient doesn't interfere with interaction */
+  z-index: 1;
+}
+
+.intro {
+  max-width: 600px;
+  position: relative;
+  z-index: 2; /* Ensure content is above the gradient */
+}
+
+.intro h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.intro p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #e0f7f4;
+}
+
+.buttons .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-right: 15px;
+  background-color: white;
+  color: var(--brand-color);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.buttons .btn:hover {
+  background-color: #e0f7f4;
+  transform: translateY(-2px);
+}
+
+.social-links {
+  margin-top: 30px;
+  position: relative;
+  z-index: 2; /* Ensure social links are above the gradient */
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 15px;
+  transition: transform 0.3s;
+}
+
+.social-links img {
+  width: 40px;
+  filter: grayscale(100%);
+  transition: filter 0.3s, transform 0.3s;
+  opacity: 1; /* Make sure icons are visible */
+}
+
+.social-links a:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Illustration Section */
+.illustration {
+  flex: 1;
+  text-align: right;
+  position: relative;
+  z-index: 2; /* Ensure the illustration is above the gradient */
+}
+
+.illustration img {
+  max-width: 80%;
+  height: auto;
+  filter: brightness(1.05);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 191, 166, 0.7);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 20px 40px; /* Adjusted padding */
+  }
+
+  .intro h1 {
+    font-size: 2.5em;
+  }
+
+  .intro {
+    margin-bottom: 40px;
+  }
+
+  .illustration img {
+    max-width: 90%; /* Make the image a bit larger on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .illustration img {
+    max-width: 100%; /* Ensure the image uses full width on very small screens */
+  }
+}
+
+/* New Skills Section */
+
+/* New Skills Section */
+.skills-section {
+  padding: 80px 40px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.skill-item {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px; /* Increased padding */
+  margin: 15px; /* Increased margin */
+  border-radius: 10px;
+  width: 250px; /* Increased width */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.6s, color 0.6s;
+  opacity: 0; /* Start hidden for animation */
+}
+
+/* Hover Effect for Skill Cards */
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    to right,
+    #0366d6,
+    #00a085
+  ); /* Gradient effect on hover */
+  color: white; /* Change text color for visibility */
+}
+
+/* Change text color for specific elements on hover */
+.skill-item:hover h3 {
+  color: #fff; /* Change header text color on hover */
+}
+
+.skill-item:hover p {
+  color: #fff; /* Change paragraph text color on hover */
+}
+
+.skill-item img {
+  width: 80px; /* Increased icon size */
+  margin-bottom: 20px;
+}
+
+.skill-item h3 {
+  font-size: 1.75em; /* Increased font size */
+  margin-bottom: 10px;
+  color: var(--brand-color);
+}
+
+.skill-item p {
+  font-size: 1.1em; /* Increased font size */
+  color: #666;
+}
+
+/* Responsive Design for Skills Section */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-item {
+    width: 90%; /* Adjusted width for smaller screens */
+    margin-bottom: 20px;
+  }
+}
+
+/* Keyframe animations for floating up */
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* Increased range of motion */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at the original position */
+  }
+}
+
+.skill-item.float-up {
+  animation: floatUp 1.5s ease-out forwards; /* Reduced speed */
+}
+
+/* Ensure the animation triggers on scroll */
+@media (prefers-reduced-motion: reduce) {
+  .skill-item {
+    animation: none;
+  }
+}
+
+/* Project section CSS */
+/* Project section CSS */
+.projects-section {
+  padding: 80px 20px; /* Less space in the center and more around corners */
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two items per row */
+  gap: 90px; /* Space between cards */
+  max-width: 1200px; /* Limit container width */
+  margin: 0 auto; /* Center the container */
+}
+
+.project-item {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 6px;
+  height: 220px; /* Adjust height for the cards */
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s, background 0.6s,
+    color 0.6s;
+  opacity: 0; /* Start hidden for the fade-in effect */
+  position: relative;
+}
+
+/* Add fade-in class for animations */
+.project-item.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header and content inside project-item */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e1e4e8;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  transition: color 0.6s; /* Smooth transition for color change */
+}
+
+.project-header h3 {
+  font-size: 1.5em;
+  color: #0366d6; /* GitHub blue */
+  margin: 0;
+}
+
+.project-language {
+  background-color: #f1f1f1;
+  color: #586069;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.project-item p {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 20px;
+  overflow: hidden; /* Ensure text doesn't overflow */
+  text-overflow: ellipsis;
+  transition: color 0.6s; /* Smooth transition for text color change */
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.project-links .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--brand-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.project-links .btn-secondary {
+  background-color: #e1e4e8;
+  color: #333;
+}
+
+.project-links .btn:hover {
+  background-color: #00a085;
+  transform: translateY(-2px);
+}
+
+.project-links .btn-secondary:hover {
+  background-color: #d0d7de;
+}
+
+/* Responsive Design for Projects Section */
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr; /* One item per row on smaller screens */
+  }
+
+  .project-item {
+    width: 90%; /* Adjust width for smaller screens */
+    margin: 0 auto; /* Center the item */
+    margin-bottom: 20px;
+  }
+}
+
+/* Animations for the Projects Section */
+@keyframes fadeInFromLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.project-item:nth-child(odd).fade-in {
+  animation: fadeInFromLeft 1s ease-out forwards;
+}
+
+.project-item:nth-child(even).fade-in {
+  animation: fadeInFromRight 1s ease-out forwards;
+}
+
+/* Hover Effect for Project Cards */
+.project-item:hover {
+  background: linear-gradient(
+    to right,
+    #0366d6,
+    #00a085
+  ); /* Base colors for gradient effect */
+  color: white; /* Change text color for visibility */
+  transform: scale(1.05); /* Slight scale up for visual effect */
+}
+
+.project-item:hover .project-header h3 {
+  color: #fff; /* Change header text color on hover */
+}
+
+.project-item:hover p {
+  color: #fff; /* Change paragraph text color on hover */
+}
+
+/* Ensure the animation triggers on scroll */
+@media (prefers-reduced-motion: reduce) {
+  .project-item {
+    animation: none;
+  }
+}
+
+/* Footer CSS starts here */
+/* Footer Styling */
+.footer {
+  background-color: var(--brand-color);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f4f4f4;
+}
+
+.footer p a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer p a:hover {
+  color: #f4f4f4;
+}
+
+/* Contact Us CSS  */
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--brand-color);
+}
+
+.contact-section p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Grid Layout for Contact Methods */
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four items per row */
+  gap: 20px; /* Space between cards */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Contact Card */
+.contact-item {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 6px;
+  text-align: left;
+  transition: background-color 0.6s, color 0.6s, transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px; /* Reduced space at the bottom */
+}
+
+.contact-item:hover {
+  background: linear-gradient(
+    to right,
+    #0366d6,
+    #00a085
+  ); /* Gradient effect with base color */
+  color: white; /* Change text color for visibility */
+  transform: scale(1.05); /* Slight scale up for visual effect */
+}
+
+.contact-item h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: inherit; /* Inherit color from parent */
+}
+
+.contact-item p {
+  font-size: 1em;
+  color: inherit; /* Inherit color from parent */
+}
+
+.contact-item a {
+  color: inherit; /* Inherit color from parent */
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Form */
+.contact-form {
+  margin-top: 40px;
+  background-color: #dcdcdc; /* Darker gray background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 50%; /* Adjust width to 50% of the page */
+  margin: 0 auto; /* Center the form */
+}
+
+.contact-form h2 {
+  font-size: 2em;
+  color: var(--brand-color);
+  margin-bottom: 20px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--brand-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form .btn:hover {
+  background-color: #00a085;
+  transform: translateY(-2px);
+}
+
+/* Contact us CSS ends */

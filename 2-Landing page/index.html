@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeThreads</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            position: fixed;
+            left: 1rem;
+            top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 1002;
+        }
+
+        .social-icons a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.5rem;
+            transition: background 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: #f39c12;
+        }
+
+        .social-icons .fa-facebook-f { background: #3b5998; }
+        .social-icons .fa-twitter { background: #1da1f2; }
+        .social-icons .fa-instagram { background: #e1306c; }
+        .social-icons .fa-youtube { background: #ff0000; }
+        .social-icons .fa-linkedin-in { background: #0077b5; }
+        .social-icons .fa-globe { background: #333; }
+
+        /* Top Banner Section */
+        .top-banner {
+            background: linear-gradient(90deg, #ff6f61, #d8345f); /* Ombre gradient background */
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1001;
+        }
+
+        .btn.explore-btn {
+            display: block;
+            margin: 0 500px;
+        }
+        
+        .top-banner .btn {
+            background: #fff;
+            color: #ff6f61;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .top-banner .btn:hover {
+            background: #e67e22;
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Ombre gradient background */
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 60px; /* Adjust top to place the header below the top banner */
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #f39c12;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 24px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            nav {
+                justify-content: space-between;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                height: calc(100vh - 70px);
+                transform: translateX(100%);
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .nav-links.show {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            /* Hamburger Animation */
+            .hamburger.open div:nth-child(1) {
+                transform: rotate(45deg) translateY(8px);
+            }
+
+            .hamburger.open div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.open div:nth-child(3) {
+                transform: rotate(-45deg) translateY(-8px);
+            }
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .section .container {
+            max-width: 800px; /* Adjust the max-width as needed */
+            width: 100%;
+            margin: 0 auto;
+        }
+
+       
+       /* Home Section with Parallax Effect */
+.home-section {
+    background: url('https://img.freepik.com/premium-photo/colorful-row-jackets-lined-up-perfect-harmony_431161-73130.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)); /* Gradient overlay */
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.home-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.home-section .content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px); /* Glassmorphism effect */
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Unique H1 Styling */
+.home-section h1 {
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b, #ff6b6b, #ffd700);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 5s ease infinite, slideInLeft 1.5s ease-in-out;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Unique P Styling */
+.home-section p {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    color: #f9f9f9;
+    animation: slideInRight 2s ease-in-out;
+    font-family: 'Merriweather', serif;
+    letter-spacing: 1.2px;
+}
+
+.description-paragraph {
+    font-size: 1.3rem;
+    line-height: 1.9;
+    color: #444;
+    margin: 2.5rem auto;
+    max-width: 850px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    padding: 1.5rem;
+    background: #fff;
+    border-left: 8px solid #ff7e5f;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.btn {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff6b6b, #ffd700);
+    background-size: 200%;
+    color: #fff;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: 'Lato', sans-serif;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-position: center;
+    transform: translateY(-7px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* Gradient Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-100px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    0% { opacity: 0; transform: translateX(100px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+
+
+        .about-section {
+            background: linear-gradient(90deg, #f9d423, #ff4e50); /* Yellow ombre gradient background */
+            color: #333;
+            padding: 4rem 2rem; /* Added padding for better spacing */
+        }
+
+        .about-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 0; /* Remove margin to eliminate gap */
+        }
+
+        .about-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            max-width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 0; /* Remove margin to eliminate gap */
+        }
+
+        .about-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px; /* Space between image and text */
+        }
+
+        /* Services Section */
+.services-section {
+    background: linear-gradient(135deg, #333, #555);
+    color: #fff;
+    padding: 4rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.services-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(45deg, #ff6b6b, #f94d6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.services-section h2:hover {
+    letter-spacing: 4px;
+    transform: scale(1.1);
+}
+
+/* Services Styling */
+.services {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.service {
+    max-width: 300px;
+    text-align: left;
+    background: #444;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    background: #555;
+}
+
+        .testimonial {
+            max-width: 300px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .testimonial img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .team-section {
+            background: #333;
+            color: #fff;
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .team-member {
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+        }
+
+        .contact-section {
+            background: #333;
+            color: #fff;
+            padding: 2rem 0;
+        }
+
+        .contact-section .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 2rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #f39c12;
+        }
+
+        /* Adjusting content padding for fixed top banner */
+        .adjust-content {
+            margin-top: 120px; /* Adjust this value to accommodate both the top banner and navbar */
+        }
+
+        /* Custom Font for Description Paragraph */
+        .description-paragraph {
+            font-family: 'Georgia', serif; /* Change this to any font you prefer */
+            font-size: 1.1rem; /* Adjust the font size as needed */
+            line-height: 1.8; /* Adjust line height for better readability */
+            margin-bottom: 2rem; /* Add spacing below the paragraph if needed */
+        }
+    </style>
+</head>
+<body>
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
+        <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
+        <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
+        <a href="#" class="fab fa-youtube" aria-label="YouTube"></a>
+        <a href="#" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+        <a href="#" class="fas fa-globe" aria-label="Website"></a>
+    </div>
+
+    <!-- Top Banner Section -->
+    <section class="top-banner">
+        <a href="#contact" class="btn">Request a Call</a>
+    </section>
+
+    <header>
+        <nav>
+            <div class="logo">VibeThreads</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sections -->
+    <section id="home" class="home-section adjust-content">
+        <div class="container">
+            <div class="content">
+                <h1>Welcome to VibeThreads</h1>
+                <p>Discover the latest trends in fashion and elevate your style with our exclusive collection.</p>
+            </div>
+        </div>
+    </section>
+    
+    <p class="description-paragraph">At VibeThreads, we are dedicated to creating a sustainable future for fashion. Our modern clothing brand blends cutting-edge designs with eco-friendly practices. Each piece in our collection is crafted from sustainable materials, ensuring that you look stylish while making a positive impact on the environment. We believe in transparency and ethical production, striving to minimize our carbon footprint and promote fair labor practices. Join us in redefining fashion with a focus on sustainability and innovation.</p>
+    
+    <a href="#services" class="btn explore-btn">Explore Our Collection</a>
+    
+    <!-- About Section -->
+    <section id="about" class="about-section section adjust-content">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-cards">
+                <div class="about-card">
+                    <img src="https://static.vecteezy.com/system/resources/previews/030/465/544/large_2x/clothes-hang-in-a-modern-boutique-reflecting-contemporary-fashion-at-the-clothing-shop-vertical-mobile-wallpaper-ai-generated-free-photo.jpg" alt="Our Mission">
+                    <h3>Our Mission</h3>
+                    <p>Our mission is to deliver the latest fashion trends while maintaining high-quality standards and providing an exceptional shopping experience.</p>
+                </div>
+                <div class="about-card">
+                    <img src="https://img.freepik.com/premium-photo/fashionable-shop-presents-clothes-hangers-embodying-modern-boutique-aesthetics-vertical-mobile_896558-18030.jpg" alt="Our Vision">
+                    <h3>Our Vision</h3>
+                    <p>We envision becoming a leading fashion brand that sets trends and inspires Gen-Z with innovative and stylish clothing options.</p>
+                </div>
+                <div class="about-card">
+                    <img src="https://img.freepik.com/premium-photo/clothes-hang-modern-boutique-reflecting-contemporary-fashion-clothing-shop-vertical-mo_896558-17834.jpg" alt="Our Values">
+                    <h3>Our Values</h3>
+                    <p>We value creativity, sustainability, and inclusivity. Our goal is to create a fashion brand that resonates with the values of the modern generation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Clothing Design</h3>
+                    <p>We offer custom clothing designs that match the latest trends and your unique style.</p>
+                </div>
+                <div class="service">
+                    <h3>Fashion Consulting</h3>
+                    <p>Our experts provide personalized fashion consulting to help you make the best style choices.</p>
+                </div>
+                <div class="service">
+                    <h3>Online Shopping</h3>
+                    <p>Shop our exclusive collection online with easy navigation and secure checkout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 VibeThreads. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            hamburger.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
