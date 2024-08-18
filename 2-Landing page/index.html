@@ -6,7 +6,7 @@
     <title>VibeThreads</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Basic Reset */
+        
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +20,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Social Media Icons */
         .social-icons {
             position: fixed;
             left: 1rem;
@@ -55,9 +54,8 @@
         .social-icons .fa-linkedin-in { background: #0077b5; }
         .social-icons .fa-globe { background: #333; }
 
-        /* Top Banner Section */
         .top-banner {
-            background: linear-gradient(90deg, #ff6f61, #d8345f); /* Ombre gradient background */
+            background: linear-gradient(90deg, #ff6f61, #d8345f); 
             color: #fff;
             padding: 1rem 2rem;
             display: flex;
@@ -92,14 +90,13 @@
             color: #fff;
         }
 
-        /* Header */
         header {
-            background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Ombre gradient background */
+            background: linear-gradient(90deg, #ff7e5f, #feb47b); 
             color: #fff;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
-            top: 60px; /* Adjust top to place the header below the top banner */
+            top: 60px; 
             left: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -140,7 +137,6 @@
             color: #f39c12;
         }
 
-        /* Hamburger Menu */
         .hamburger {
             display: none;
             cursor: pointer;
@@ -156,7 +152,6 @@
             transition: all 0.3s ease-in-out;
         }
 
-        /* Responsive Styles */
         @media screen and (max-width: 768px) {
             nav {
                 justify-content: space-between;
@@ -190,7 +185,6 @@
                 display: flex;
             }
 
-            /* Hamburger Animation */
             .hamburger.open div:nth-child(1) {
                 transform: rotate(45deg) translateY(8px);
             }
@@ -204,7 +198,6 @@
             }
         }
 
-        /* Sections */
         .section {
             padding: 100px 2rem;
             min-height: 100vh;
@@ -215,21 +208,19 @@
         }
 
         .section .container {
-            max-width: 800px; /* Adjust the max-width as needed */
+            max-width: 800px; 
             width: 100%;
             margin: 0 auto;
         }
 
        
-       /* Home Section with Parallax Effect */
 .home-section {
     background: url('https://img.freepik.com/premium-photo/colorful-row-jackets-lined-up-perfect-harmony_431161-73130.jpg') no-repeat center center/cover;
     color: #fff;
     padding: 6rem 2rem;
     text-align: center;
     position: relative;
-    background-attachment: fixed; /* Parallax effect */
-}
+    background-attachment: fixed; 
 
 .home-section::before {
     content: '';
@@ -238,7 +229,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)); /* Gradient overlay */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)); 
     z-index: 1;
     opacity: 0.8;
 }
@@ -251,15 +242,14 @@
 .home-section .content {
     max-width: 800px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    background: rgba(255, 255, 255, 0.1); 
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px); /* Glassmorphism effect */
+    backdrop-filter: blur(5px); 
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Unique H1 Styling */
 .home-section h1 {
     font-size: 3.8rem;
     margin-bottom: 1.5rem;
@@ -273,7 +263,6 @@
     font-family: 'Oswald', sans-serif;
 }
 
-/* Unique P Styling */
 .home-section p {
     font-size: 1.5rem;
     margin-bottom: 2.5rem;
@@ -322,14 +311,12 @@
 
 
 
-/* Gradient Animation */
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Keyframe Animations */
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -348,9 +335,9 @@
 
 
         .about-section {
-            background: linear-gradient(90deg, #f9d423, #ff4e50); /* Yellow ombre gradient background */
+            background: linear-gradient(90deg, #f9d423, #ff4e50); 
             color: #333;
-            padding: 4rem 2rem; /* Added padding for better spacing */
+            padding: 4rem 2rem; 
         }
 
         .about-cards {
@@ -358,7 +345,7 @@
             justify-content: space-between;
             gap: 20px;
             flex-wrap: wrap;
-            margin: 0; /* Remove margin to eliminate gap */
+            margin: 0; 
         }
 
         .about-card {
@@ -370,17 +357,16 @@
             flex: 1;
             max-width: 300px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 0; /* Remove margin to eliminate gap */
+            margin: 0; 
         }
 
         .about-card img {
             width: 100%;
             height: auto;
             border-radius: 10px;
-            margin-bottom: 15px; /* Space between image and text */
+            margin-bottom: 15px; 
         }
 
-        /* Services Section */
 .services-section {
     background: linear-gradient(135deg, #333, #555);
     color: #fff;
@@ -406,7 +392,6 @@
     transform: scale(1.1);
 }
 
-/* Services Styling */
 .services {
     display: flex;
     justify-content: space-around;
@@ -506,22 +491,19 @@
             color: #f39c12;
         }
 
-        /* Adjusting content padding for fixed top banner */
         .adjust-content {
-            margin-top: 120px; /* Adjust this value to accommodate both the top banner and navbar */
+            margin-top: 120px; 
         }
 
-        /* Custom Font for Description Paragraph */
         .description-paragraph {
-            font-family: 'Georgia', serif; /* Change this to any font you prefer */
-            font-size: 1.1rem; /* Adjust the font size as needed */
-            line-height: 1.8; /* Adjust line height for better readability */
-            margin-bottom: 2rem; /* Add spacing below the paragraph if needed */
+            font-family: 'Georgia', serif; 
+            font-size: 1.1rem; 
+            line-height: 1.8; 
+            margin-bottom: 2rem; 
         }
     </style>
 </head>
 <body>
-    <!-- Social Media Icons -->
     <div class="social-icons">
         <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
         <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
@@ -531,7 +513,6 @@
         <a href="#" class="fas fa-globe" aria-label="Website"></a>
     </div>
 
-    <!-- Top Banner Section -->
     <section class="top-banner">
         <a href="#contact" class="btn">Request a Call</a>
     </section>
@@ -553,7 +534,6 @@
         </nav>
     </header>
 
-    <!-- Sections -->
     <section id="home" class="home-section adjust-content">
         <div class="container">
             <div class="content">
@@ -567,7 +547,6 @@
     
     <a href="#services" class="btn explore-btn">Explore Our Collection</a>
     
-    <!-- About Section -->
     <section id="about" class="about-section section adjust-content">
         <div class="container">
             <h2>About Us</h2>
@@ -611,7 +590,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2024 VibeThreads. All Rights Reserved.</p>
         <div class="social-links">
@@ -622,7 +600,6 @@
     </footer>
 
     <script>
-        // Hamburger menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
 
